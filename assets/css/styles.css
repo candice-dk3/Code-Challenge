@@ -1,0 +1,38 @@
+/* *{
+    margin: 1rem;
+} */
+
+/* Nav Section */
+
+/* Carousel Section */
+
+/* Info Section */
+.info-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    justify-items: center;
+}
+.info, p{
+    width: 60%;
+    display: block;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300;
+    color: #061C2C;
+    float: left;
+}
+.logos{
+    float: right;
+    width: 416px;
+    height: 42px;
+    background-image: url(/assets/images/logos.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 34px;
+}
+
+/* Box Section */
+
+/* Mini Box Section */
