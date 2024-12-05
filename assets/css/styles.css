@@ -319,11 +319,18 @@ h1{
 /* media queries */
 @media screen and (max-width: 840px) {
     nav {
-        height: 6rem;
+        height: 100px;
+        padding: 0;
+    }
+    .site-header{
+        height: 100px;
+        padding: 0;
     }
     .nav-logo{
-        left: 2rem;
-        top: 2rem;
+        left: 20px;
+        top: 20px;
+        width: 120px !important;
+        padding: 0;
     }
     .burger-menu {
         position: relative;
@@ -332,6 +339,7 @@ h1{
         top: 20px;
         left: 44rem;
         font-size: 2.5rem;
+        padding: 0;
     }
     .hero-section:after{
         display: none;
@@ -365,9 +373,11 @@ h1{
         overflow: hidden;
         width: 100%; 
         margin: 0 auto;
+        height: 40vh;
+        padding: 0;
     }
     .carousel-section{
-        margin-top: 7rem;
+        margin-top: 100px;
     }
     .carousel-slide {
         top: 0;
@@ -376,27 +386,20 @@ h1{
         height: 100%;
         transition: left 0.5s ease;
     }
-    .carousel-slide.active {
-        position: relative;
-        left: 0;
-        transition: 1s;
-    }
-    .carousel-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
     button.next {
-        position: absolute;
-        top: 36%;
+        top: 20%;
         right: 20px;
-        /* transform: translateY(-50%); */
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 10rem;
-        cursor: pointer;
-        z-index: 10;
+    }
+    h3{
+        height: 50px;
+        top: 70%;
+        margin-top: -50px;
+        line-height:50px;
+        font-size: 20px;
+        font-weight: 500 !important;
+    }
+    .pagination{
+        display: none;
     }
 }
 @media screen and (max-width: 480px) {
