@@ -10,14 +10,44 @@
 <body>
     <nav class="main-nav">
         <div class="inner">
-            <a href="#" class="nav-logo">
+            <a href="/" class="nav-logo">
                 <img src="./assets/images/Visio_Logo_Black.png" alt="">
             </a>
+            <div class="burger-menu">
+                <button id="burger-button" class="burger-icon">☰</button>
+                <div id="fullscreen-menu" class="menu-overlay">
+                  <button id="close-button" class="close-icon">×</button>
+                  <nav class="menu-nav">
+                    <ul>
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Services</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
         </div>
     </nav>
     <main class="home-page-container">
         <section class="hero-section">
-            <div class="carousel-section"></div>
+            <div class="carousel-section">
+                <div class="carousel">
+                    <div class="carousel-slide active">
+                        <h3>LOOK BEYOND THE ORDINARY</h3>
+                      <img src="/assets/images/Carousel.png" alt="Slide 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>WE LEAVE NO STONE UNTURNED</h3>
+                      <img src="/assets/images/Visio_Logo_Black.png" alt="Slide 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <h3>WE CAN AND WE WILL</h3>
+                      <img src="image3.jpg" alt="Slide 3">
+                    </div>
+                    <button class="next">›</button>
+                  </div>
+            </div>
         </section>
         <section class="home-intro-section">
             <div class="info-section">
@@ -29,9 +59,37 @@
                 </div>
             </div>
         </section>
-        <section>
-            <div class="box-section">
-                <div class="container"></div>
+        <section class="home-ctas">
+            <div class="inner">
+                <div class="box-section">
+                    <a href="" class="box" title="The Visio difference">
+                        <div class="container">
+                            <span>
+                                The Visio
+                                <br>
+                                difference
+                            </span>
+                        </div>
+                    </a>
+                    <a href="" class="box" title="Meet the Visio team">
+                        <div class="container">
+                            <span>
+                                Meet the
+                                <br>
+                                Visio team
+                            </span>
+                        </div>
+                    </a>
+                    <a href="" class="box" title="Our funds and investments">
+                        <div class="container">
+                            <span>
+                                Our funds
+                                <br>
+                                and investments
+                            </span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
         <section>
