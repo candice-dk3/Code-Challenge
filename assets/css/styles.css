@@ -5,32 +5,25 @@
     padding:0;
     margin:0;
 }
-
 nav {
     position: fixed;
     padding: 1rem;
     height: 8rem;
     width: 100%;
     background-color: white;
-    z-index: 1000; 
+    z-index: 1000;
 }
-/* General Reset */
-/* body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-} */
-  
-  /* Burger Menu Container */
-  .burger-menu {
+.nav-logo{
+    position: absolute;
+    left: 13rem;
+    top: 2rem;
+}
+.burger-menu {
     position: relative;
-  }
-  
-  /* Burger Icon */
-  .burger-icon {
+}
+.burger-icon {
     position: fixed;
-    top: 20px;
+    top: 24px;
     left: 108rem;
     font-size: 2rem;
     background: none;
@@ -38,10 +31,8 @@ nav {
     color: #000;
     cursor: pointer;
     z-index: 1001;
-  }
-  
-  /* Fullscreen Menu Overlay */
-  .menu-overlay {
+}
+.menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -57,9 +48,7 @@ nav {
     transition: transform 0.5s ease-in-out;
     z-index: 1000;
   }
-  
-  /* Close Button */
-  .close-icon {
+.close-icon {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -68,39 +57,26 @@ nav {
     border: none;
     color: white;
     cursor: pointer;
-  }
-  
-  /* Navigation Styles */
-  .menu-nav ul {
+}
+.menu-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: center;
-  }
-  
-  .menu-nav ul li {
+}  
+.menu-nav ul li {
     margin: 20px 0;
-  }
-  
-  .menu-nav ul li a {
+}
+.menu-nav ul li a {
     text-decoration: none;
     color: white;
     font-size: 2rem;
     transition: color 0.3s ease;
-  }
-  
-  .menu-nav ul li a:hover {
-    color: #007bff; /* Change to a highlight color on hover */
-  }
-  
-/* .inner{
-    background-image: url('/assets/images/Visio_Logo_Black.png');
-    width: 15em;
-    background-repeat: no-repeat;
-    height: 100%;
-} */
+}
+.menu-nav ul li a:hover {
+    color: #007bff;
+}
 
-/* Carousel Section */
 .hero-section{
     position: relative;
     margin-bottom: 90px;
@@ -115,6 +91,8 @@ nav {
     display: block;
     content: "";
     height: 120px;
+    z-index: 1;
+    transition: left 0.5s ease; 
 }
 .hero-section:after{
     right: 0;
@@ -126,6 +104,11 @@ nav {
     display: block;
     content: "";
     height: 120px;
+    z-index: -1;
+}
+h3{
+    z-index: 10;
+    color: #fff;
 }
 .carousel {
     position: relative;
@@ -162,15 +145,14 @@ button.next {
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: #000;
-    font-size: 2rem;
+    color: #fff;
+    font-size: 10rem;
     cursor: pointer;
 }
 button.next:disabled {
     cursor: not-allowed;
     opacity: 0.5;
 }  
-
 
 /* Info Section */
 .home-intro-section{
@@ -182,7 +164,6 @@ button.next:disabled {
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-
 }
 p{
     width: 60%;
@@ -206,25 +187,32 @@ p{
 
 /* Box Section */
 .home-ctas{
-    padding: 0 20px;
-    margin-bottom: 110px;
+    padding: 0 20px ;
+    margin-bottom: 4rem !important;
+}
+.home-ctas, .inner{
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
 }
 .box-section{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4rem;
 }
 .box{
-    width: 30rem;
+    width: 29rem;
+}
+.box:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 .container{
-    display: grid;
-    grid-template-rows: repeat(2,1fr);
     width: 90%;
-    height: 200px;
+    height: 6rem;
 }
 .box, span a{
     display: block;
-    height: 65%;
     background-color: #061C2C;
     position: relative;
     padding: 98px 0 0 32px;
@@ -238,3 +226,121 @@ p{
 }
 
 /* Mini Box Section */
+.mb-section{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+}
+.box-section{
+    margin-bottom: 3rem;
+}
+.m-box{
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+    width: 90%;
+}
+.mb-section a{
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 16px;
+    background-color: #244AC2;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    background-image: url(/assets/images/MBox.png);
+}
+.mb-section a:hover{
+    background-color: #061C2C;
+}
+/* media queries */
+@media screen and (max-width: 840px) {
+    nav {
+        height: 6rem;
+    }
+    .nav-logo{
+        left: 2rem;
+        top: 2rem;
+    }
+    .burger-menu {
+        position: relative;
+    }
+    .burger-icon {
+        top: 20px;
+        left: 44rem;
+        font-size: 2.5rem;
+    }
+    .hero-section:after{
+        display: none;
+    }
+    p{
+        width: 100%;
+        font-weight: 100;
+        color: #636363;
+    }
+    .box{
+        width: 14rem;
+    }
+    .box, span a{
+        padding: 98px 0 0 32px;
+        background-position: top 31px left 32px;
+        font-size: 1.5rem;
+    }
+    .mb-section{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+    .m-box{
+        margin-bottom: 2rem;
+    }
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%; 
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 480px) {
+    p{
+        width: 100%;
+        font-weight: 100;
+        color: #636363;
+    }
+    .box-section{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .box{
+        width: 24rem;
+        height: 2rem;
+        margin-bottom: 2rem;
+    }
+    .box, span a{
+        font-size: 1.4rem;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 100px;
+        height: 6.5rem;
+    }
+    .mb-section{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+    .m-box{
+        margin-bottom: 1rem;
+        width: 95%;
+        padding: 0;
+    }
+    .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%; 
+        margin: 0 auto;
+    }
+}

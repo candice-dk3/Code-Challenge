@@ -1,6 +1,5 @@
 const slides = document.querySelectorAll('.carousel-slide');
 const nextButton = document.querySelector('.next');
-const prevButton = document.querySelector('.prev'); // Assuming you have a previous button
 let currentIndex = 0;
 
 // Function to show the next slide
@@ -25,14 +24,6 @@ nextButton.addEventListener('click', () => {
   }
 });
 
-// Event listener for the Previous button
-prevButton.addEventListener('click', () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    showSlide(currentIndex);
-  }
-});
-
 // Initialize the first slide
 showSlide(currentIndex);
 
@@ -42,10 +33,10 @@ const fullscreenMenu = document.getElementById('fullscreen-menu');
 
 // Open the menu
 burgerButton.addEventListener('click', () => {
-  fullscreenMenu.style.transform = 'translateY(0)';
+  fullscreenMenu.style.transform = 'translateY(0)'; // Show the menu
 });
 
 // Close the menu
 closeButton.addEventListener('click', () => {
-  fullscreenMenu.style.transform = 'translateY(-100%)';
+  fullscreenMenu.style.transform = 'translateY(-100%)'; // Hide the menu
 });
