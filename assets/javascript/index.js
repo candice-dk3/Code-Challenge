@@ -31,14 +31,25 @@ prevButton.addEventListener('click', () => {
 
 showSlide(currentIndex);
 
-const burgerButton = document.getElementById('burger-button');
-const closeButton = document.getElementById('close-button');
-const fullscreenMenu = document.getElementById('fullscreen-menu');
+document.addEventListener('DOMContentLoaded', function() {
+  const burgerIcon = document.getElementById('burger-icon');
+  const menuOverlay = document.getElementById('menu-overlay');
+  const closeIcon = document.getElementById('close-icon');
 
-burgerButton.addEventListener('click', () => {
-  fullscreenMenu.style.transform = 'translateY(0)'; 
-});
+  // Show the menu when the burger icon is clicked
+  burgerIcon.addEventListener('click', function() {
+      menuOverlay.classList.add('active');
+  });
 
-closeButton.addEventListener('click', () => {
-  fullscreenMenu.style.transform = 'translateY(-100%)';
+  // Hide the menu when the close icon is clicked
+  closeIcon.addEventListener('click', function() {
+      menuOverlay.classList.remove('active');
+  });
+
+  // Optional: Hide the menu when clicking outside of it
+  menuOverlay.addEventListener('click', function(event) {
+      if (event.target === menuOverlay) {
+          menuOverlay.classList.remove('active');
+      }
+  });
 });
