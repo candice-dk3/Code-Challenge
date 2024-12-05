@@ -5,13 +5,15 @@
     padding:0;
     margin:0;
 }
-nav {
-    position: fixed;
-    padding: 1rem;
+.site-header{
     height: 8rem;
+    position: fixed;
     width: 100%;
-    background-color: white;
-    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: 0.3s;
+    z-index: 50;
 }
 .nav-logo{
     position: absolute;
@@ -38,13 +40,13 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.95); /* Black background with opacity */
+    background-color: rgba(0, 0, 0, 0.95);
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: translateY(-100%); /* Initially hidden above the viewport */
+    /* transform: translateY(-100%); */
     transition: transform 0.5s ease-in-out;
     z-index: 1000;
   }
@@ -91,7 +93,7 @@ nav {
     display: block;
     content: "";
     height: 120px;
-    z-index: 1;
+    z-index: 10;
     transition: left 0.5s ease; 
 }
 .hero-section:after{
@@ -107,8 +109,23 @@ nav {
     z-index: -1;
 }
 h3{
-    z-index: 10;
+    z-index: 20;
+    left: -100%;
+    top: 50%;
+    margin-top: -60px;
+    position: absolute;
+    background-color: #244AC2;
+    display: block;
+    height: 120px;
+    padding-left: 60px;
+    padding-right: 100px;
+    font-size: 25px;
+    font-weight: 600;
     color: #fff;
+    line-height: 120px;
+    text-transform: uppercase;
+    transition-property: left;
+    transition-duration: 0.6s;
 }
 .carousel {
     position: relative;
@@ -131,7 +148,10 @@ h3{
     justify-content: center;
 }
 .carousel-slide.active {
-    left: 0; 
+    position: relative;
+    left: 0;
+    transition: 1s;
+    z-index: 8;
 }
 .carousel-slide img {
     width: 100%;
@@ -148,12 +168,30 @@ button.next {
     color: #fff;
     font-size: 10rem;
     cursor: pointer;
+    z-index: 10;
 }
-button.next:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-}  
-
+.pagination{
+    position: absolute;
+    display: block;
+    right: 14rem;
+    bottom: 40px;
+    z-index: 10;
+    text-align: center;
+}
+.pagination span{
+    background-image: url(/assets/images/Box.png);
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 1px;
+}
+.pagination span.active{
+    opacity: 0.39;
+    transform: rotate(160deg);
+}
 /* Info Section */
 .home-intro-section{
     padding: 0 20px;

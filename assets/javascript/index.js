@@ -1,42 +1,44 @@
 const slides = document.querySelectorAll('.carousel-slide');
 const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
 let currentIndex = 0;
 
-// Function to show the next slide
 function showSlide(index) {
+  if (index >= slides.length) {
+    currentIndex = 0; 
+  } else if (index < 0) {
+    currentIndex = slides.length - 1; 
+  } else {
+    currentIndex = index; 
+  }
+
   slides.forEach((slide, i) => {
     slide.classList.remove('active');
-    slide.style.left = i === index ? '0' : '100%';
+    slide.style.left = i === currentIndex ? '0' : '100%';
   });
-
-  slides[index].classList.add('active');
-
-  // Disable the next button if the last slide is reached
-  nextButton.disabled = index === slides.length - 1;
-  prevButton.disabled = index === 0; // Disable previous button if on the first slide
+  slides[currentIndex].classList.add('active');
+  nextButton.disabled = false;
+  prevButton.disabled = false; 
 }
 
-// Event listener for the Next button
 nextButton.addEventListener('click', () => {
-  if (currentIndex < slides.length - 1) {
-    currentIndex++;
-    showSlide(currentIndex);
-  }
+  showSlide(currentIndex + 1); 
 });
 
-// Initialize the first slide
+prevButton.addEventListener('click', () => {
+  showSlide(currentIndex - 1); 
+});
+
 showSlide(currentIndex);
 
 const burgerButton = document.getElementById('burger-button');
 const closeButton = document.getElementById('close-button');
 const fullscreenMenu = document.getElementById('fullscreen-menu');
 
-// Open the menu
 burgerButton.addEventListener('click', () => {
-  fullscreenMenu.style.transform = 'translateY(0)'; // Show the menu
+  fullscreenMenu.style.transform = 'translateY(0)'; 
 });
 
-// Close the menu
 closeButton.addEventListener('click', () => {
-  fullscreenMenu.style.transform = 'translateY(-100%)'; // Hide the menu
+  fullscreenMenu.style.transform = 'translateY(-100%)';
 });
