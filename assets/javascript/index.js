@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updatePagination(); 
 
       nextButton.disabled = false;
-      prevButton.disabled = false; 
+      prevButton.disabled = true; 
   }
 
   function updatePagination() {
@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
       showSlide(currentIndex - 1); 
   });
 
-  // Initialize the carousel
   showSlide(currentIndex);
   updatePagination();
 });
