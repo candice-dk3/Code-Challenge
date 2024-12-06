@@ -17,8 +17,8 @@
 }
 .nav-logo{
     position: absolute;
-    left: 13rem;
-    top: 2rem;
+    left: 75px;
+    top: 18px;
 }
 .burger-menu {
     position: relative;
@@ -169,14 +169,20 @@ h3{
 button.next {
     position: absolute;
     top: 36%;
-    right: 20px;
+    right: 80px;
+    /* background-image: url(/assets/images/arrow.png) !important; */
+    width: 80px;
+    height:80px;
     /* transform: translateY(-50%); */
     background: none;
     border: none;
-    color: #fff;
     font-size: 10rem;
     cursor: pointer;
     z-index: 10;
+}
+button.next:hover {
+    transform: translateX(20px);
+    transition: transform 0.3s ease;
 }
 .pagination{
     position: absolute;
@@ -187,7 +193,7 @@ button.next {
     text-align: center;
 }
 .pagination span{
-    background-image: url(/assets/images/Box.png);
+    background-image: url(/assets/images/indicator.png);
     width: 22px;
     height: 22px;
     display: inline-block;
